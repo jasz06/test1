@@ -14,6 +14,14 @@ export class HeroesComponent {
 
   ngOnInit(): void {
     this.getHeroes();
+    //this.heroService.getTest().subscribe(result => console.log(result));
+    this.heroService.getTest().subscribe((response: any) => {
+      console.log(response)
+      location.reload()
+  }, 
+  (error: any) => {
+      console.log(error)
+  })
   }
 
   getHeroes(): void {
